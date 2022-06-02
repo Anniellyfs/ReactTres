@@ -6,7 +6,7 @@
         <style>
             table, td, th {  
               border: 1px solid #ddd;
-              text-align: left;
+              text-align: center;
             }
             
             table {
@@ -22,6 +22,10 @@
             th, td {
               padding: 15px;
             }
+
+            tr:hover {
+                background-color: rgb(153, 147, 145);
+            }
    
         </style>
     </head>
@@ -34,7 +38,7 @@
         <script src="libs/babel.JS" charset="utf-8"></script>
         <script type="text/babel">
          
-        const TabelaChocolates = ({titulo,cabecalhos:[cabecalho1,cabecalho2]}) =>{
+        const TabelaChocolates = ({titulo,cabecalhos:[cabecalho1,cabecalho2],corpo:[corpo1,corpo2,corpo3,corpo4]}) =>{
             return(
                 <div>
                     <h1 align="center">{titulo}</h1>
@@ -44,6 +48,14 @@
                               <th>{cabecalho1}</th>
                               <th>{cabecalho2}</th>
                            </tr>
+                           <tr>
+                              <td>{corpo1}</td>
+                              <td>{corpo2}</td>
+                           </tr>             
+                           <tr>
+                              <td>{corpo3}</td>
+                              <td>{corpo4}</td>
+                           </tr>  
                         </thead>
                         
                     </table>
@@ -52,8 +64,9 @@
         }
 
         const valoresCabecalhos = ["Nome", "Marca"]
+        const valoesCorpo = ["Laka", "Lacta", "Batom","Garoto"]
         ReactDOM.render(
-          <TabelaChocolates titulo="Minha Tabela de Chocolates" cabecalhos={valoresCabecalhos}/>
+          <TabelaChocolates titulo="Minha Tabela de Chocolates" cabecalhos={valoresCabecalhos} corpo={valoesCorpo}/>
           ,
         document.getElementById("app"))
 
