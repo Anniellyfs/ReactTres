@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ReceitaReact - 3</title>      
+        <style>
+            table, td, th {  
+              border: 1px solid #ddd;
+              text-align: left;
+            }
+            
+            table {
+              border-collapse: collapse;
+              width: 50%;
+            }
+   
+            th {
+               background-color: #555756;
+               color: white;
+            }
+   
+            th, td {
+              padding: 15px;
+            }
+   
+        </style>
+    </head>
+    <body>
+        <div id="app">
+        </div>
+
+        <script src="libs/react.js"></script>
+        <script src="libs/react-dom.js"></script>
+        <script src="libs/babel.JS" charset="utf-8"></script>
+        <script type="text/babel">
+         
+        const TabelaChocolates = ({titulo,cabecalhos:[cabecalho1,cabecalho2]}) =>{
+            return(
+                <div>
+                    <h1 align="center">{titulo}</h1>
+                    <table id="tabela"   align="center">
+                        <thead>
+                           <tr>
+                              <th>{cabecalho1}</th>
+                              <th>{cabecalho2}</th>
+                           </tr>
+                        </thead>
+                        
+                    </table>
+                </div>
+            )
+        }
+
+        const valoresCabecalhos = ["Nome", "Marca"]
+        ReactDOM.render(
+          <TabelaChocolates titulo="Minha Tabela de Chocolates" cabecalhos={valoresCabecalhos}/>
+          ,
+        document.getElementById("app"))
+
+   </script>
+
+   </body>
+
+</html> 
